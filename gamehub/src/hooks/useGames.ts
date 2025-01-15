@@ -2,7 +2,7 @@ import apiClient from "@/components/api-client";
 import { CanceledError } from "axios";
 import { useEffect, useState } from "react";
 
-export interface Platform{
+export interface Platform {
   id: string;
   name: string;
   slug: string;
@@ -12,6 +12,7 @@ export interface Game {
   name: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
+  metacritic: number;
 }
 
 interface FetchResponse {
