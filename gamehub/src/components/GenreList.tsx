@@ -3,11 +3,11 @@ import getCroppedImageUrl from "@/services/image-url";
 import { Button, HStack, Image, List, ListItem } from "@chakra-ui/react";
 import GenreListSkeleton from "./GenreListSkeleton";
 
-interface Props{
+interface Props {
   onSelectGenre: (genre: Genre) => void;
 }
 
-function GenreList({onSelectGenre}: Props) {
+function GenreList({ onSelectGenre }: Props) {
   const { data, isLoading, errors } = useGenres();
   const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
