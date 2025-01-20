@@ -44,9 +44,10 @@ function GenreList({ selectedGenre, onSelectGenre }: Props) {
               />
               <Button
                 whiteSpace="normal"
+                paddingY="5"
                 textAlign="left"
-                colorScheme={
-                  genre.id == selectedGenre?.id ? "blackAlpha" : "null"
+                color={
+                  genre.id == selectedGenre?.id ? "red" : "blue"
                 }
                 fontWeight={genre.id == selectedGenre?.id ? "bold" : "normal"}
                 onClick={() => onSelectGenre(genre)}
