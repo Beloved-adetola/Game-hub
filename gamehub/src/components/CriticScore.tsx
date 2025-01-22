@@ -12,4 +12,5 @@ function CriticScore({ score }: Props) {
   );
 }
 
+
 export default CriticScore;
