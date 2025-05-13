@@ -39,7 +39,7 @@ function SortSelector({ onSelectSortOrder, sortOrder }: Props) {
         {/* {isLoading && <Spinner />} */}
         {sortOrders.map((order) => (
           <MenuItem
-            onChange={() => onSelectSortOrder(order.value)}
+            onClick={() => onSelectSortOrder(order.value)}
             key={order.value}
             value={order.value}
           >

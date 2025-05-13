@@ -8,7 +8,6 @@ import {
   List,
   ListItem,
 } from "@chakra-ui/react";
-import GenreListSkeleton from "./GenreListSkeleton";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
@@ -16,10 +15,8 @@ interface Props {
 }
 
 function GenreList({ selectedGenre, onSelectGenre }: Props) {
-  const { data, isLoading, errors } = useGenres();
-  const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-
-  if (errors) return null;
+  const { data } = useGenres();
+  // const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   return (
     <>
@@ -27,12 +24,12 @@ function GenreList({ selectedGenre, onSelectGenre }: Props) {
         Genres
       </Heading>
       <List>
-        {isLoading &&
+        {/* {isLoading &&
           skeleton.map((skeleton) => (
             <List key={skeleton}>
               <GenreListSkeleton />
             </List>
-          ))}
+          ))} */}
         {data.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
             <HStack>
@@ -46,9 +43,7 @@ function GenreList({ selectedGenre, onSelectGenre }: Props) {
                 whiteSpace="normal"
                 paddingY="5"
                 textAlign="left"
-                color={
-                  genre.id == selectedGenre?.id ? "red" : "blue"
-                }
+                color={genre.id == selectedGenre?.id ? "red" : "blue"}
                 fontWeight={genre.id == selectedGenre?.id ? "bold" : "normal"}
                 onClick={() => onSelectGenre(genre)}
                 fontSize="lg"
